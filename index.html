@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="uhUyM3TEfd0BDXlEWA7d-qMrpnSEd2Hrgdk6zqH37kE" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sorting visualizer">
+    <meta name="theme-color" content="#1287A5">
+    <meta name="apple-mobile-web-app-status-bar" content="#1287A5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./images/surftocat-512x512.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <title>SORTING VISUALIZER</title>
+</head>
+<body>
+    <div id="main">
+        <nav>
+            <div class="title">
+                Sorting Visualizer
+            </div>
+            <div class="menu">
+                <select name="algo" id="algo">
+                    <option value="0">Select Algorithm</option>
+                    <optgroup label="Comparison based Techniques">
+                        <option value="1">Bubble Sort</option>
+                        <option value="2">Insertion Sort</option>
+                        <option value="3">Selection Sort</option>
+                        <option value="4">Modified Bubble Sort</option>
+                    </optgroup>
+                    <optgroup label="Divide & Conquer Techniques">
+                        <option value="5">Quick Sort</option>
+                        <option value="6">Merge Sort</option>
+                    </optgroup>
+                </select>
+                <input type="number" id="num" value=18 placeholder="Elements" inputmode="numeric" />
+            </div>
+        </nav>
+        <div class="controls">
+            <p class="custom-array">
+                <button onclick="displayModal()">Enter your own array ?</button>
+            </p>
+            <button onclick="generateElements()">Generate</button>
+            <button id="sortBtn" onclick="sortElements()">SORT</button>
+        </div>
+        <p class="swapCount">Number of swaps: <span id="cnt">0</span></p>
+        <div class="array"></div>
+    </div>
+    <div class="modal">
+        <div class="close-modal" onclick="closeModal()">❌</div>
+        <h2>Enter your array</h2>
+        <p>eg... 43, 164, 292, 93, 362, 80</p>
+        <div>
+            <input type="text" id="custom-arr" inputmode="numeric"/>
+        </div>
+        <p style="color: rgb(34, 54, 73); font-size:12px;">* Make sure you enter array in given format <br/> (Comma separated values) <br/>(Range -> 1 to 400)</p>
+        <button onclick="addCustomElements()">Done !</button>
+    </div>
+    <footer>
+        <p>
+            Made with by <a href="https://github.com/AryanSharma05" target="_blank">Aryan Sharma </a>. 
+        </p>
+    </footer>
+    <script>
+        if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+                .register('sw.js')
+                .then(function() { console.log("Service Worker Registered"); })
+                .catch(err => console.log('Service Worker not registered', err));
+        }
+    </script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/bubbleSort.js"></script>
+    <script src="./scripts/insertionSort.js"></script>
+    <script src="./scripts/selectionSort.js"></script>
+    <script src="./scripts/modifiedBubbleSort.js"></script>
+    <script src="./scripts/quickSort.js"></script>
+    <script src="./scripts/mergeSort.js"></script>
+</body>
+</html>
